@@ -1,17 +1,27 @@
-Compiling single file...
---------
-- Filename: C:\Users\Praktikan\Documents\erija\ddd.cpp
-- Compiler Name: MinGW GCC 6.3.0
+#include <ctime>
+#include <iostream>
 
-Processing C++ source file...
---------
-- C++ Compiler: C:\MinGW\bin\g++.exe
-- Command: g++.exe "C:\Users\Praktikan\Documents\erija\ddd.cpp" -o "C:\Users\Praktikan\Documents\erija\ddd.exe" -lncurses -I"C:\MinGW\include" -I"C:\MinGW\mingw32\include" -I"C:\MinGW\lib\gcc\mingw32\6.3.0\include" -I"C:\MinGW\lib\gcc\mingw32\6.3.0\include\c++" -L"C:\MinGW\lib" -L"C:\MinGW\mingw32\lib" -static-libstdc++ -static-libgcc
+using namespace std;
 
-Compilation results...
---------
-- Errors: 0
-- Warnings: 0
-- Output Filename: C:\Users\Praktikan\Documents\erija\ddd.exe
-- Output Size: 2,03997993469238 MiB
-- Compilation Time: 0,50s
+void generate_maze(int height, int width) {
+	char **p_p_maze = NULL;
+	p_p_maze = new char*[height];
+	for (int i = 0; i < height; i++) {
+		p_p_maze[i] = new char[width];
+	}
+
+	for (int i = 0; i <= height+10; i++) {
+		for (int j = 0; j <= width+10; j++) {
+			p_p_maze[i][j] = 'x';
+			cout << p_p_maze[i][j];
+		}
+		cout << '\n';
+	}
+
+}
+
+
+int main() {
+	generate_maze(55,190);
+	system("pause");
+}
